@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Moroccan Handicrafts</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Thank You for Your Order!</h1>
+        <p>Your order has been successfully received. We will send you a confirmation email shortly.</p>
+    </header>
+
+    <!-- Order Details -->
+    <section class="order-details">
+        <h2>Your Order Details</h2>
+        <p><strong>Product:</strong> <span id="productName"></span></p>
+        <p><strong>Price:</strong> <span id="productPrice"></span> €</p>
+        <p><strong>Name:</strong> <span id="fullName"></span></p>
+        <p><strong>Shipping Address:</strong> <span id="address"></span></p>
+        <p><strong>Card Type:</strong> <span id="cardType"></span> <img id="cardTypeImg" class="card-icon" alt="Card Icon"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Moroccan Handicrafts. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve the stored information from sessionStorage
+        const productName = sessionStorage.getItem('productName');
+        const productPrice = sessionStorage.getItem('productPrice');
+        const fullName = sessionStorage.getItem('fullName');
+        const address = sessionStorage.getItem('address');
+        const cardType = sessionStorage.getItem('cardType');
+
+        // Check if the data is available
+        if (!productName || !productPrice || !fullName || !address || !cardType) {
+            console.error("Some data is missing in sessionStorage.");
+            alert("Missing data, please verify your information.");
+        }
+
+        // Display the information on the page
+        document.getElementById("productName").textContent = productName;
+        document.getElementById("productPrice").textContent = productPrice;
+        document.getElementById("fullName").textContent = fullName;
+        document.getElementById("address").textContent = address;
+        document.getElementById("cardType").textContent = cardType;
+
+        // Display the card icon based on the selected card type
+        const cardIcon = document.getElementById("cardTypeImg");
+        if (cardType === "Visa") {
+            cardIcon.src = "photos/visa.png";
+        } else if (cardType === "MasterCard") {
+            cardIcon.src = "photos/master.png";
+        } else if (cardType === "American Express") {
+            cardIcon.src = "photos/amer.png";
+        } else if (cardType === "Discover") {
+            cardIcon.src = "photos/discover.png";
+        }
+
+        // Optional: Clear the sessionStorage data after displaying
+        sessionStorage.clear();
+    </script>
+
+</body>
+</html>

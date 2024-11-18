@@ -1,0 +1,243 @@
+/* Styles globaux */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* En-tête avec animation plus dynamique */
+.header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #8b0000;
+    color: white;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInHeader 2s ease-out forwards, slideInHeader 1.5s ease-out forwards;
+}
+
+@keyframes fadeInHeader {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInHeader {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+.header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.header p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.header .btn {
+    padding: 12px 30px;
+    background-color: #ffa500;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header .btn:hover {
+    background-color: #cc8400;
+    transform: scale(1.1);
+}
+
+/* Carrousel avec défilement automatique */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    animation: slideInCarousel 1.5s ease-out forwards;
+}
+
+@keyframes slideInCarousel {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInCaption 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeInCaption {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.carousel-caption h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+}
+
+/* Section Produits */
+.featured-products {
+    padding: 60px 20px;
+    background-color: #fafafa;
+    animation: fadeInSection 2s ease-out forwards;
+}
+
+@keyframes fadeInSection {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.featured-products .section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #8b0000;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation des produits avec un décalage */
+.product-links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    animation: fadeInProductLinks 1.5s ease-out forwards;
+}
+
+@keyframes fadeInProductLinks {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.product-link img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-link h3 {
+    margin-top: 10px;
+    font-size: 1.7rem;
+    color: #8b0000;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.product-link:hover img {
+    transform: scale(1.1) rotate(3deg); /* Zoom et rotation */
+    filter: brightness(1.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+.product-link:hover h3 {
+    color: #ffa500;
+    transform: translateY(-10px); /* Titre qui remonte légèrement */
+}
+
+
+
+
+
+
+/* Slogan dynamique */
+/* Style pour le conteneur du slogan */
+/* Slogan dynamique */
+.slogan-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 2rem; /* Taille de police agrandie pour le slogan */
+    font-family: 'Poppins', sans-serif; /* Une police moderne */
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff6f61, #ffcc00); /* Dégradé de couleurs plus vivantes */
+    color: white; /* Couleur du texte */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+    display: inline-block; /* Garde la forme compacte autour du texte */
+    opacity: 0; /* Commence invisible */
+    transform: scale(0.9); /* Commence légèrement réduit */
+    animation: fadeInScale 2s ease forwards; /* Animation d'apparition */
+}
+
+/* Animation pour l'apparition du slogan */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ajouter un effet d'ombre au texte pour le rendre plus lisible */
+.slogan-container h2 {
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 0; /* Enlève les marges par défaut */
+    line-height: 1.2; /* Ajuste l'espacement des lignes */
+}
+
+/* Bouton Explore Our Products */
+.header .btn {
+    padding: 12px 30px;
+    background-color: #ff6f61; /* Un ton plus dynamique */
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header .btn:hover {
+    background-color: #ffcc00; /* Couleur de survol en jaune vif */
+    transform: scale(1.1);
+}
+/* Footer */
+footer {
+    background-color: #8b0000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
