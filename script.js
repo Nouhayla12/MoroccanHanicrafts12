@@ -116,7 +116,7 @@ window.onload = function () {
     if (sloganSection) {
         setTimeout(() => {
             sloganSection.classList.add("show");
-        }, 2000); // Fade in after 2 seconds
+        }, 4000); // Fade in after 4 seconds
     }
 };
 
