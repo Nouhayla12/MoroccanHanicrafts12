@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter Access Code</h2>
+    <input type="password" id="password" placeholder="Enter code">
+    <button onclick="checkPassword()">Submit</button>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "DroitPub2024") { 
+                window.location.href = "index.html"; // Redirect to your site
+            } else {
+                alert("Incorrect code. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
