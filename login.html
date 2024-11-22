@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login.css"> <!-- Lien vers le fichier CSS -->
     <script>
         function checkPassword(event) {
             event.preventDefault();
             const password = document.getElementById("password").value;
 
-            // Mot de passe correct
-            if (password === "WordPub2024") {
-                localStorage.setItem("authenticated", "true");
-                window.location.href = "index.html"; // Redirection vers le site principal
+            // Vérifier le mot de passe correct
+            if (password === "DroitPub2024") {
+                sessionStorage.setItem("authenticated", "true"); // Session valable uniquement jusqu'à la fermeture du navigateur
+                window.location.href = "index.html"; // Redirige vers la page principale
             } else {
                 alert("Mot de passe incorrect. Réessayez !");
-                document.getElementById("password").value = ""; // Effacer le champ
+                document.getElementById("password").value = ""; // Effacer le champ de mot de passe
             }
         }
     </script>
