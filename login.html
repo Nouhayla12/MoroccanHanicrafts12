@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script>
-        function checkLogin() {
-            const username = document.getElementById("username").value;
+        function checkLogin(event) {
+            event.preventDefault(); // Prevent form submission
+            const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value;
 
             if (username === "admin" && password === "WordPub2024") {
                 localStorage.setItem("authenticated", "true");
                 window.location.href = "index.html";
             } else {
-                alert("Invalid credentials!");
+                alert("Invalid username or password! Please try again.");
+                document.getElementById("password").value = ""; // Clear password input
             }
         }
     </script>
 </head>
 <body>
     <h1>Login</h1>
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="checkLogin()">Login</button>
+    <form onsubmit="checkLogin(event)">
+        <input type="text" id="username" placeholder="Username" required>
+        <br>
+        <input type="password" id="password" placeholder="Password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>
