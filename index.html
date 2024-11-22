@@ -6,11 +6,12 @@
     <title>Moroccan Handicrafts</title>
     <link rel="stylesheet" href="style.css">
     <script>
-    // Vérifie si l'utilisateur est authentifié
-    if (localStorage.getItem("authenticated") !== "true") {
-        window.location.href = "login.html"; // Redirige vers la page de connexion
-    }
-</script>
+        // Vérification de l'authentification
+        if (sessionStorage.getItem("authenticated") !== "true") {
+            // Redirection vers la page de login si non authentifié
+            window.location.href = "login.html";
+        }
+    </script>
 
 
 </head>
